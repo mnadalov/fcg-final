@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Laberinto 2.0</title>
+        <link href="main.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <!-- menu y controles-->
+        <div id="controls">
+            <div class="control"><span id="roomsWideDescriptor">Ancho:</span><output id="roomsWideValue">5</output><input id="roomsWideSlider" type="range" min="5" max="50" value="5" oninput="roomsWideValue.value = this.value; changeWidth(this.value)"/></div>
+            <div class="control"><span id="roomsDeepDescriptor">Largo:</span><output id="roomsDeepValue">5</output><input id="roomsDeepSlider" type="range" min="5" max="50" value="5" oninput="roomsDeepValue.value = this.value; changeDepth(this.value)"/></div>
+            <button onClick="start()">Reiniciar</button>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.js"></script>
+        <script src="mazeGenerator.js"></script>
+        <script src="main.js"></script>
+</body>
+
+    </body>
+</html>
