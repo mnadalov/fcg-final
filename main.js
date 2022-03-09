@@ -198,13 +198,13 @@ function roomMinusWalls(oldPosition, newPosition){
 }
 
 function drawFloorAndCeiling(cellPosition){
-    drawPlane(cellPosition, -wallHeight/2);
-    drawPlane(cellPosition, wallHeight/2);
+    drawPlane(cellPosition, -wallHeight/2, floorMaterial);
+    drawPlane(cellPosition, wallHeight/2, ceilingMaterial);
 }
 
-function drawPlane(cellPosition, yPosition){
+function drawPlane(cellPosition, yPosition, material){
     geometrys.push(new THREE.PlaneGeometry(wallLength, wallLength));
-    meshes.push(new THREE.Mesh( geometrys[geometrys.length-1], floorMaterial ));
+    meshes.push(new THREE.Mesh( geometrys[geometrys.length-1], material ));
     meshes[meshes.length-1].material.side = THREE.DoubleSide;
     scene.add( meshes[meshes.length-1] );
     meshes[meshes.length-1].rotation.set(-Math.PI/2, 0, Math.PI); 
